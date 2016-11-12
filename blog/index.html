@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>James Jacob's tech site</title>
-</head>
-<body>
-	<h1>Hello there!</h1>
-	<h2>This is a blog to share my coding experiences with the world!</h2>
-</body>
-</html>
+---
+layout: default
+title: James Jacob's Blog
+---
+	<h1>{{ page.title }}</h1>
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
