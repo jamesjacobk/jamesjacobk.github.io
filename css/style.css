@@ -42,19 +42,24 @@ a:hover
 
 #p-img
 {
-	position: fixed;
+	background-image: url("../images/home_background.jpg"); 
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	z-index: -1;
 	width: 100%;
 }
+
 article
 {
-	margin-top: 25%;
 	background-color: white;
 	padding:10%;
 	text-align: center;
 	width: 40%;
 	margin-left: 20%;
-		
+	margin-top: 25%;
+	z-index: 1;
 }
 
 article h2
@@ -90,7 +95,7 @@ header
 	font-size: 1.4em;
 	text-transform: uppercase;
 	font-weight: bold;
-	border-bottom: 3px solid;
+	border-bottom: 2px solid;
 }
 
 ul
@@ -116,7 +121,7 @@ ul a:hover
 footer
 {
 	max-width: 100%;
-	margin-top: 40%;
+	margin-top: 25%;
 	background-color: white;
 	padding:5%;
 	text-align: center;	

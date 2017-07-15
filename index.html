@@ -6,14 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans' rel='stylesheet' type='text/css'>
 </head>
-<body>
-
+<body onload="init()" id="p-img">
 <nav>
 	<a href="#">Home</a>
 	<a href="http://jamesjacobk.com">Portfolio</a>
 	<a href="https://medium.com/@jamesjacobk">My thoughts</a>
 </nav>
-<img src="images/home_background.jpg" id="p-img"/>
 <article id="about">
 	<h2>
 		Hello there!
@@ -30,23 +28,34 @@
 </footer>
 
 <script>
- 	var b=document.getElementById('about');
-	b.style.borderRadius=window.innerWidth+"px";
+    var a = document.getElementById('p-img');
+ 	var b = document.getElementById('about');
 
-    var a=document.getElementById('p-img');
+ 	function init()
+ 	{
+ 		setRadius();
+ 		setBackgroundPosition();
+ 	}
 
-	window.addEventListener('scroll',function()
+	function setRadius()
 	{
-		a.style.top=-window.pageYOffset*0.2+"px";
-		
-	})
+		b.style.borderRadius = window.innerWidth+"px";
+	}
 
+	function setBackgroundPosition()
+	{
+		 a.style.backgroundPosition="0% " + -window.pageYOffset*0.2 + "px";
+	}
 
 	window.addEventListener('resize',function()
 	{
-		b.style.borderRadius=window.innerWidth+"px";
+		setRadius();
 	})
 
+	window.addEventListener('scroll',function()
+	{
+		setBackgroundPosition();
+	})
 </script>
 </body>
 </html>
